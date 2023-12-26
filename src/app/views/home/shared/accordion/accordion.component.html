@@ -1,0 +1,14 @@
+<section class="answers">
+  <h2 class="text-center fw-bold mt-5 mb-4">Ответы на часто задаваемые вопросы</h2>
+  <div id="accordion"
+       class="container-fluid w-75 d-flex flex-column justify-content-between align-content-center align-self-center">
+    <div *ngFor="let question of questionItems">
+      <h3 class="btn__ques bg-primary rounded-2 btn-outline-primary text-light p-3 fs-6 position-relative"
+          (click)="showItem($event)">
+        {{question.questionTitle}}</h3>
+      <div class="accordion-content">
+        {{question.answerText}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+<section class="form">
+  <div class="container mt-5 mb-4 d-flex justify-content-center align-items-center">
+    <form class="row g-3 needs-validation w-50" id="form" novalidate
+          [formGroup]="orderForm"
+          *ngIf="valid"
+    (ngSubmit)="createOrder(orderForm)">
+      <h2 class="text-center fw-bold mb-3">Сделать заказ</h2>
+      <div class="col-md-12">
+        <label for="validationCustom01" class="form-label">Ваш товар</label>
+        <input type="text" class="form-control" id="validationCustom07" required readonly
+               placeholder="{{productName}}"
+               formControlName="product">
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01"
+               [class]="'form-label' + ((orderForm.get('name')?.invalid
+        && (orderForm.get('name')?.touched || orderForm.get('name')?.dirty)
+        &&orderForm.get('name')?.errors?.['required'])? ' invalid-feedback': '')"
+        >Имя</label>
+        <input type="text" class="form-control" id="validationCustom01"
+               name="name"
+               formControlName="name">
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02"
+               [class]="'form-label' + ((orderForm.get('last_name')?.invalid
+        && (orderForm.get('last_name')?.touched || orderForm.get('last_name')?.dirty)
+        &&orderForm.get('last_name')?.errors?.['required'])? ' invalid-feedback': '')"
+        >Фамилия</label>
+        <input type="text" class="form-control" id="validationCustom02"
+               name="last_name"
+               formControlName="last_name">
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom03"
+               [class]="'form-label' + ((orderForm.get('phone')?.invalid
+        && (orderForm.get('phone')?.touched || orderForm.get('phone')?.dirty)
+        &&orderForm.get('phone')?.errors?.['required'])? ' invalid-feedback': '')"
+        >Телефон</label>
+        <input type="text" class="form-control" id="validationCustom03"
+               name="phone"
+               formControlName="phone">
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom04"
+               [class]="'form-label' + ((orderForm.get('country')?.invalid
+        && (orderForm.get('country')?.touched || orderForm.get('country')?.dirty)
+        &&orderForm.get('country')?.errors?.['required'])? ' invalid-feedback': '')"
+        >Страна</label>
+        <input type="text" class="form-control" id="validationCustom04"
+               name="country"
+               formControlName="country">
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom05"
+               [class]="'form-label' + ((orderForm.get('zip')?.invalid
+        && (orderForm.get('zip')?.touched || orderForm.get('zip')?.dirty)
+        &&orderForm.get('zip')?.errors?.['required'])? ' invalid-feedback': '')"
+        >Индекс</label>
+        <input type="text" class="form-control" id="validationCustom05"
+               name="zip"
+               formControlName="zip">
+      </div>
+      <div class="col-md-12">
+        <label for="validationCustom06"
+               [class]="'form-label' + ((orderForm.get('address')?.invalid
+        && (orderForm.get('address')?.touched || orderForm.get('address')?.dirty)
+        &&orderForm.get('address')?.errors?.['required'])? ' invalid-feedback': '')"
+        >Адрес доставки</label>
+        <input type="text" class="form-control" id="validationCustom06"
+               name="address"
+               formControlName="address">
+      </div>
+      <div class="col-md-12">
+        <label for="validationCustom01" class="form-label">Комментарий к заказу</label>
+        <textarea name="comment" rows="3" wrap="hard" class="form-control comment" id="validationCustom08"
+                  placeholder="Напишите что-нибудь..."
+                  formControlName="comment"></textarea>
+      </div>
+      <div class="col-xl-3 w-100">
+        <button class="btn btn-primary d-block w-50 hvr-back-pulse" id="create-order"
+                [disabled]="orderForm.invalid || orderForm.disabled">
+          Отправить
+        </button>
+        <p class="w-100 text-danger fs-6 mt-2" *ngIf="gotError">{{errorMessage}}</p>
+      </div>
+    </form>
+    <div class="w-50 h-25 bg-body border border-1 border-success rounded-2 p-4 text-center" *ngIf="!valid">
+      <p class="text-success fw-bold mb-4 text-center">Спасибо за заказ!</p>
+      <a class="w-25 h-25 p-2 border border-1 border-success text-white rounded-2 bg-success text-decoration-none"
+         routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="goToMain()">OK</a>
+    </div>
+  </div>
+</section>

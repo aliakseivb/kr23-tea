@@ -1,0 +1,24 @@
+#validationCustom07 {
+  background: #d7fac3;
+  color: green;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.invalid-feedback {
+  color: red;
+  display: inline-block;
+  font-size: inherit;
+  margin-top: 0;
+}
+
+.comment {
+  font-size: 14px;
+  color: green;
+  background: #f2fdea;
+}

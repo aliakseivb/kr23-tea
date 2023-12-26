@@ -1,0 +1,21 @@
+<section class="collection text-center">
+  <h1 class="text-center fw-bold mt-5 mb-4">Наши чайные коллекции</h1>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 mb-4 g-2 d-flex align-content-center justify-content-center">
+
+    <div class="col p-2" *ngFor="let product of products; let i = index">
+      <div class="h-100 d-flex flex-column justify-content-center align-items-center border border-1 border-dark-subtle rounded-3">
+
+          <img class="w-100 rounded-3" src="{{ product.image }}" alt="image_{{i+1}}">
+
+        <div class="ps-3 pe-2 flex-grow-1">
+          <h4 class="fw-bold mt-3 mb-3">{{ product.title }}</h4>
+        </div>
+        <a class="col-5 btn btn-primary ms-3 mb-3" [routerLink]="['/product', product.id]" (click)="showProduct(product.id, product.title)">Подробнее</a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loader-bg">
+    <div class="loader"></div>
+  </div>
+</section>

@@ -1,0 +1,197 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+
+app-component {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+
+.navbar-brand {
+  width: 70px;
+  height: 55px;
+}
+
+.success {
+  display: none;
+  background: black;
+  opacity: 90% !important;
+}
+
+.close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+}
+
+.carousel-control-prev-icon {
+  position: absolute;
+  left: 20px;
+  width: 40px !important;
+  height: 40px !important;
+  cursor: pointer;
+  background-image: url("./assets/images/arrow__prew.png") !important;
+}
+
+.carousel-control-next-icon {
+  position: absolute;
+  right: 20px;
+  width: 40px !important;
+  height: 40px !important;
+  background-image: url("./assets/images/arrow__next.png") !important;
+}
+
+ngbd-toast-closeable {
+  position: absolute;
+  width: 50%;
+  height: 30%;
+  top: calc(50% - (30% / 2));
+  left: calc(50% - (50% / 2));
+  z-index: 2;
+  border-radius: 5px;
+  transition: .4s ease;
+}
+
+ngbd-toast-closeable img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  filter: blur(3px);
+}
+
+ngbd-toast-closeable:hover {
+  transform: scale(1.05);
+}
+
+ngbd-toast-closeable:hover img {
+  filter: blur(0) saturate(150%);
+}
+
+ngbd-toast-closeable:hover .toast__text {
+  text-shadow: 3px 3px 2px rgb(160, 185, 159);
+  color: #ffffff;
+}
+
+.toast.fade.show {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 3;
+}
+
+.toast-header {
+  font-size: 20px;
+  color: #2c2731;
+  background: transparent;
+  border: none;
+  z-index: 3;
+}
+
+.toast-header button {
+  color: #2c2731;
+  z-index: 3;
+  transition: .2s linear;
+}
+
+.toast-header button:hover {
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.toast-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  z-index: 3;
+}
+
+.toast__text {
+  font-size: 35px;
+  font-weight: bolder;
+  text-align: center;
+  color: #164613;
+  text-shadow: 3px 3px 2px rgb(91 147 87);
+  z-index: 3;
+}
+
+.popup__link {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #164613;
+  background: #529d25;
+  transition: .4s ease all;
+  z-index: 3;
+  margin-top: 40px;
+}
+
+.popup__link:hover {
+  box-shadow: 0 0 9px 0 rgb(0, 0, 0);
+  color: #e6e9ec;
+}
+
+.product__text {
+  text-align: justify;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #529d25 !important;
+}
+
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .5);
+}
+
+.loader {
+  border: 10px solid #529d25;
+  border-top: 10px solid #bceea0;
+  border-bottom: 10px solid #529d25;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

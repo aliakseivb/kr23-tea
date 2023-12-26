@@ -1,0 +1,36 @@
+.btn__ques {
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  transition: all .6s ease;
+}
+
+.accordion-content.show {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  border-top: 0;
+  padding: 10px 15px;
+  max-height: 100px;
+  opacity: 100;
+  margin-bottom: 5px;
+}
+
+.btn__ques::after {
+  transform: rotate(180deg);
+  content: url("../../../../../assets/images/arrow_next.png");
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  transition: .5s;
+}
+
+.btn__ques:not(.show)::after {
+  transform: rotate(0deg);
+  transition: .5s;
+  content: url("../../../../../assets/images/arrow_next.png");
+}
