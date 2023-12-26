@@ -41,7 +41,7 @@ export class MainComponent implements OnInit, OnDestroy {
       this.showPopup = some;
       setTimeout((): void => {
         this.showPopup = true;
-      }, 500);
+      }, 60000);
     }
   }
 
